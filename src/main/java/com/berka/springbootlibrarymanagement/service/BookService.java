@@ -11,7 +11,7 @@ public interface BookService {
 
     Book findById(int theId);
 
-    void save(Book theUser);
+    void save(Book theBook);
 
     void deleteById(int theId);
 }

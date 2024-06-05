@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 30 2024 г., 16:38
+-- Время создания: Июн 05 2024 г., 13:15
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.0.22
 
@@ -46,7 +46,8 @@ INSERT INTO `books` (`id`, `book_name`, `link`, `pages`, `photo_path`, `title`) 
 (3, 'Ходячий замок', 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/pdf%2Fhodyachi_zamok.pdf?alt=media&token=a6055017-eb0f-4f26-bdb4-66e0125c98b1', 453, 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/photo%2Fhodyachi_zamok.jpg?alt=media&token=a074c0f8-72b5-423b-9e37-4d62478bf066', 'История любви'),
 (4, 'Комдив', 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/pdf%2Fkomdiv.pdf?alt=media&token=6c556e73-cba7-4441-9493-b0c8dec37b41', 278, 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/photo%2Fkomdiv.jpg?alt=media&token=0c8bed26-9159-42a4-ae41-a6a05c526e44', 'Служба'),
 (5, 'Красная карма', 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/pdf%2Fkrasnaya_karma.pdf?alt=media&token=fa7df222-3ddd-46f0-8024-7af61e9986f5', 483, 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/photo%2Fkrasnaya_karma.jpg?alt=media&token=1de7717d-98d0-41d2-9e26-3a6f27002e6e', 'Возмездие'),
-(6, 'Звездная карта', 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/pdf%2Fzvezdnaya_karta.pdf?alt=media&token=89aa3eb5-6b30-40cd-8f1a-8ba6a53c1fc8', 548, 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/photo%2Fzvezdnaya_karta.jpg?alt=media&token=fa4f9486-c785-41b5-9261-8e2e991d67c7', 'Космос');
+(6, 'Звездная карта', 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/pdf%2Fzvezdnaya_karta.pdf?alt=media&token=89aa3eb5-6b30-40cd-8f1a-8ba6a53c1fc8', 548, 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/photo%2Fzvezdnaya_karta.jpg?alt=media&token=fa4f9486-c785-41b5-9261-8e2e991d67c7', 'Космос'),
+(15, 'Кулинарная', 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/pdf%2F1717577900550.pdf?alt=media&token=44b2f95f-d3fd-4866-acd4-9e937a805141', 111, 'https://firebasestorage.googleapis.com/v0/b/library-31f76.appspot.com/o/photo%2F1717577900570.jpg?alt=media&token=e0b3406d-5ea5-41ea-a685-baf1f9110670', 'Бургеры');
 
 -- --------------------------------------------------------
 
@@ -69,7 +70,10 @@ INSERT INTO `user` (`id`, `email`, `first_name`, `last_name`) VALUES
 (1, 'arman@mail.ru', 'arman', 'arman'),
 (2, 'aslan@mail.ru', 'aslan', 'aslan'),
 (3, 'omar@mail.ru', 'omar', 'omar'),
-(4, 'vasya@mail.ru', 'vasya', 'vasya');
+(4, 'vasya@mail.ru', 'vasya', 'vasya'),
+(5, 'erlan@mail.ru', 'erlan', 'erlan'),
+(6, 'dias@mail.ru', 'dias', 'dias'),
+(7, 'admin@mail.ru', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -87,12 +91,16 @@ CREATE TABLE `user_library` (
 --
 
 INSERT INTO `user_library` (`user_id`, `book_id`) VALUES
-(1, 1),
-(1, 1),
-(1, 2),
-(1, 3),
 (2, 1),
-(2, 2);
+(2, 2),
+(1, 3),
+(1, 1),
+(1, 1),
+(3, 1),
+(3, 5),
+(3, 1),
+(3, 6),
+(5, 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -125,13 +133,13 @@ ALTER TABLE `user_library`
 -- AUTO_INCREMENT для таблицы `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
